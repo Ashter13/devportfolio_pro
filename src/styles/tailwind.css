@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #f7fafc; /* gray-50 */
+    --color-foreground: #1a202c; /* gray-900 */
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #1a202c; /* gray-900 */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1a202c; /* gray-900 */
+    --color-muted: #edf2f7; /* gray-100 */
+    --color-muted-foreground: #4a5568; /* gray-600 */
+    
+    /* Border and Input */
+    --color-border: #e2e8f0; /* gray-200 */
+    --color-input: #ffffff; /* white */
+    --color-ring: #319795; /* teal-600 */
+    
+    /* Brand Colors */
+    --color-primary: #1a365d; /* blue-900 */
+    --color-primary-foreground: #ffffff; /* white */
+    --color-secondary: #2d3748; /* gray-700 */
+    --color-secondary-foreground: #ffffff; /* white */
+    --color-accent: #319795; /* teal-600 */
+    --color-accent-foreground: #ffffff; /* white */
+    
+    /* Status Colors */
+    --color-success: #38a169; /* green-600 */
+    --color-success-foreground: #ffffff; /* white */
+    --color-warning: #d69e2e; /* yellow-600 */
+    --color-warning-foreground: #1a202c; /* gray-900 */
+    --color-error: #e53e3e; /* red-600 */
+    --color-error-foreground: #ffffff; /* white */
+    --color-destructive: #e53e3e; /* red-600 */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Surface Colors */
+    --color-surface: #edf2f7; /* gray-100 */
+    --color-surface-foreground: #1a202c; /* gray-900 */
+    
+    /* Text Colors */
+    --color-text-primary: #1a202c; /* gray-900 */
+    --color-text-secondary: #4a5568; /* gray-600 */
+    --color-text-muted: #718096; /* gray-500 */
+    
+    /* Interactive Colors */
+    --color-hover: #f7fafc; /* gray-50 */
+    --color-active: #edf2f7; /* gray-100 */
+    
+    /* Shadow Variables */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+.btn-primary  {
+    @apply bg-primary text-primary-foreground focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+.btn-secondary  {
+    @apply bg-secondary text-secondary-foreground focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+.btn-accent  {
+    @apply bg-accent text-accent-foreground focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply bg-card text-card-foreground rounded-lg border shadow-sm;
+  }
+  
+  .surface {
+    @apply bg-surface text-surface-foreground;
+  }
+  
+  .text-primary {
+    @apply text-text-primary;
+  }
+  
+  .text-secondary {
+    @apply text-text-secondary;
+  }
+  
+  .text-muted {
+    @apply text-text-muted;
+  }
+}
+
+@layer utilities {
+  .shadow-brand-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .shadow-brand-md {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-brand-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-brand-xl {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .transition-brand {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-fast {
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-slow {
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
